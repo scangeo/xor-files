@@ -15,13 +15,11 @@ else
 	LDFLAGS =
 endif
 
-all: $(EXECS)
-
 clean:
-	/bin/rm -f *.o *~ ../$(EXECS)*
+	/bin/rm -f *.o *~ ./$(EXECS)*
 	
 sg_mam_text: xor.o $(LIBFILES)
-	$(CC) -o ../$@ $(LDFLAGS) $^
+	$(CC) -o ./$@ $(LDFLAGS) $^
 
 	
 
