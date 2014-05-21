@@ -1,0 +1,78 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ xor (0.1-1) unstable; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Author: Endrey  <endrey@ws33>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- /dev/null
++++ xor-0.1/xor.1
+@@ -0,0 +1,39 @@
++.\" (C) Copyright 2014 Endrey  <endrey@ws33>,
++.\"
++.\" First parameter, NAME, should be all caps
++.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
++.\" other parameters are allowed: see man(7), man(1)
++.TH XOR SECTION "January 21, 2014"
++.SH NAME
++xor \- Execute exclusive OR logic operation between files
++.SH SYNOPSIS
++.B xor
++.RI [ options ] "files" ...
++.br
++.B bar
++.RI [ options ] "files" ...
++.SH DESCRIPTION
++This manual page documents briefly the
++.B xor
++command. 
++.PP
++\fBxor\fP is a program that allows to the user perform a XOR operation 
++between the files determined in command line. The result is by default shown 
++in terminal, so it can be used with pipes. A file resultant can be obtained as
++well with the -r option.
++.SH OPTIONS
++.P 
++These programs follow the usual GNU command line syntax, with long
++options starting with two dashes (`-').
++A summary of options is included below.
++.TP
++.B \-h, \-\-help
++Show summary of options.
++.TP
++.B \-r, \-\-resultqgro file
++Save result in a file
++.TP
++.B \-v, \-\-version
++Show version of program.
++.br
++Debian Project		2014-01-21		XOR(1)
+--- xor-0.1.orig/Makefile
++++ xor-0.1/Makefile
+@@ -28,7 +28,7 @@ uninstall:
+ reinstall: uninstall install
+ 
+ clean:
+-	/bin/rm -f *.o *~ ./$(EXECS)*
++	@rm -f *.o *~ ./$(EXECS)
+ 	
+ 
+ 	

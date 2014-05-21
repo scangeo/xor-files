@@ -1,0 +1,15 @@
+Source: xor
+Section: Utilities
+Priority: extra
+Maintainer: Endrey  <yerdnezaid@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.3
+Homepage: http://gitorious.org/xor/xor
+#Vcs-Git: git://git.debian.org/collab-maint/xor.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/xor.git;a=summary
+
+Package: xor
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description:  Allows to create a document by the use of xor.
+ Allows to the user encrypt and decrypt files by the use of xor upon them. The result may be given by terminal or by a new file.
