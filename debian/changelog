@@ -1,0 +1,5 @@
+xor (0.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Endrey  <endrey@ws33>  Mon, 20 Jan 2014 13:56:48 -0430
