@@ -1,14 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: xor
-Source: <url://example.com>
+Upstream-Name: xor-files
+Source: https://github.com/scangeo/xor-files
 
 Files: *
-Copyright: <years> <put author's name and email here>
-           <years> <likewise for another author>
+Copyright: 2014 Endrey Diaz diaz@scangeo.com
 License: GPL-3.0+
 
 Files: debian/*
-Copyright: 2014 Endrey  <endrey@ws33>
+Copyright: 2014 Endrey Diaz <endrey@ws33>
 License: GPL-3.0+
 
 License: GPL-3.0+
