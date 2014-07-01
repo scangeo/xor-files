@@ -113,7 +113,6 @@ int main(int argc, char *argv[])
        			archivo = fopen(argv[optind],"r");
 		    	if (archivo == NULL){
     		    	fprintf(stderr, "ERROR: Invalid route for first file\n");
-        		//	printf("Ruta de primer archivo incorrecta\n");
         			uso();
         			return 1;
         		}
@@ -130,13 +129,32 @@ int main(int argc, char *argv[])
 		    	optind++;	
 		    	index++;
 			}
-			        	
-        	if ((argv[optind] == NULL) && ((index == 4)||(index == 3))) {
-             	fprintf(stderr, "ERROR: Two files at least required\n");
- //        		printf("Debe indicar al menos dos archivos\n");
+			 			        	
+        	if ((argv[optind] == NULL) && (index == 3)) {
+             	fprintf(stderr, "ERROR: One file at least required\n");
         		return 1;
         	}
-        	      	
+        	
+        	if ((argv[optind] == NULL) && (index == 4)) {
+               	i = 0;
+               	if (ruta_ind == 1) {
+               		archivo = fopen(ruta,"w+");
+               		while (i < global_v.tamano) {
+               			fputc(global_v.arreglo2[i],archivo);
+               			i++;
+               		}
+               		fclose(archivo);
+               	}
+               	else{
+               		while (i < global_v.tamano) {
+               		    fprintf(stdout, "%c",(char)global_v.arreglo2[i]);
+               			i++;
+               		}
+               	} 	
+               	free(global_v.arreglo2);
+                return 0;
+        	} 
+        	     	
 		    if ((argv[optind] != NULL) && (index > 3)) {
 		    	archivo2 = fopen(argv[optind],"r");
 		   		if (archivo2 == NULL){
